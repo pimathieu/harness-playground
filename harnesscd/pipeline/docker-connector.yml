@@ -7,7 +7,7 @@ connector:
   projectIdentifier: default_project
   type: DockerRegistry
   spec:
-    dockerRegistryUrl: https://index.docker.io/v2/
+    dockerRegistryUrl: https://registry.hub.docker.com/v2/
     providerType: DockerHub
     auth:
       type: Anonymous
