@@ -1,0 +1,9 @@
+environment:
+  name: dev-env
+  identifier: devenv
+  accountId: IKm6EpYzTJ6D8zpKRU_wjQ
+  tags: {}
+  type: PreProduction
+  orgIdentifier: default
+  projectIdentifier: default_project
+  variables: []

@@ -1,0 +1,9 @@
+environment:
+  name: stage-env
+  identifier: stageenv
+  accountId: IKm6EpYzTJ6D8zpKRU_wjQ
+  tags: {}
+  type: PreProduction
+  orgIdentifier: default
+  projectIdentifier: default_project
+  variables: []

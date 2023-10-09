@@ -1,0 +1,35 @@
+service:
+  name: http-helm
+  identifier: httphelm
+  orgIdentifier: default
+  projectIdentifier: default_project
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: ngnix
+            type: HelmChart
+            spec:
+              store:
+                type: Http
+                spec:
+                  connectorRef: httphelmrepo
+              chartName: nginx
+              chartVersion: 15.3.1
+              subChartPath: ""
+              helmVersion: V3
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              fetchHelmChartMetadata: false
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: dockerconnector
+                imagePath: bitnami/nginx
+                tag: <+input>.executionInput().default(latest)
+                digest: ""
+              identifier: nginx
+              type: DockerRegistry
+    type: NativeHelm

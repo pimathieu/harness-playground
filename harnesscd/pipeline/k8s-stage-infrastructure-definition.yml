@@ -1,0 +1,15 @@
+infrastructureDefinition:
+  name: stage-infra
+  identifier: stageinfra
+  description: ""
+  tags: {}
+  orgIdentifier: default
+  projectIdentifier: default_project
+  environmentRef: stageenv
+  deploymentType: NativeHelm
+  type: KubernetesDirect
+  spec:
+    connectorRef: harnessk8sconnector
+    namespace: stage
+    releaseName: release-<+INFRA_KEY>
+  allowSimultaneousDeployments: false

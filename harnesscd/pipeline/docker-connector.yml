@@ -1,0 +1,16 @@
+connector:
+  name: docker-connector
+  identifier: dockerconnector
+  description: ""
+  accountIdentifier: IKm6EpYzTJ6D8zpKRU_wjQ
+  orgIdentifier: default
+  projectIdentifier: default_project
+  type: DockerRegistry
+  spec:
+    dockerRegistryUrl: https://index.docker.io/v2/
+    providerType: DockerHub
+    auth:
+      type: Anonymous
+    delegateSelectors:
+      - helm-delegate
+    executeOnDelegate: true

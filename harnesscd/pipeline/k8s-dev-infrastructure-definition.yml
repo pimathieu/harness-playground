@@ -1,0 +1,15 @@
+infrastructureDefinition:
+  name: dev-infra
+  identifier: devinfra
+  description: ""
+  tags: {}
+  orgIdentifier: default
+  projectIdentifier: default_project
+  environmentRef: devenv
+  deploymentType: NativeHelm
+  type: KubernetesDirect
+  spec:
+    connectorRef: harnessk8sconnector
+    namespace: dev
+    releaseName: release-<+INFRA_KEY>
+  allowSimultaneousDeployments: false

@@ -1,0 +1,9 @@
+environment:
+  name: prod-env
+  identifier: prodenv
+  description: ""
+  tags: {}
+  type: Production
+  orgIdentifier: default
+  projectIdentifier: default_project
+  variables: []

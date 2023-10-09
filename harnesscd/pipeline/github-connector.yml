@@ -1,0 +1,20 @@
+connector:
+  name: harness_gitconnector
+  identifier: harnessgitconnector
+  description: ""
+  accountIdentifier: IKm6EpYzTJ6D8zpKRU_wjQ
+  orgIdentifier: default
+  projectIdentifier: default_project
+  type: Github
+  spec:
+    url: https://github.com/pimathieu/
+    validationRepo: harness-playground
+    authentication:
+      type: Http
+      spec:
+        type: UsernameToken
+        spec:
+          username: pimathieu
+          tokenRef: harness_gitpat
+    executeOnDelegate: false
+    type: Account

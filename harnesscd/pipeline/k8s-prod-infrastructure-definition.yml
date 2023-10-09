@@ -1,0 +1,15 @@
+infrastructureDefinition:
+  name: prod-infra
+  identifier: prodinfra
+  description: ""
+  tags: {}
+  orgIdentifier: default
+  projectIdentifier: default_project
+  environmentRef: prodenv
+  deploymentType: NativeHelm
+  type: KubernetesDirect
+  spec:
+    connectorRef: harnessk8sconnector
+    namespace: prod
+    releaseName: release-<+INFRA_KEY>
+  allowSimultaneousDeployments: false
