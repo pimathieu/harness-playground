@@ -57,16 +57,6 @@ pipeline:
         type: Deployment
         spec:
           deploymentType: NativeHelm
-          service:
-            serviceRef: httphelm
-            serviceInputs:
-              serviceDefinition:
-                type: NativeHelm
-                spec:
-                  artifacts:
-                    primary:
-                      primaryArtifactRef: <+input>
-                      sources: <+input>
           environment:
             environmentRef: stageenv
             deployToAll: false
@@ -88,6 +78,9 @@ pipeline:
                   type: HelmRollback
                   timeout: 10m
                   spec: {}
+          service:
+            useFromStage:
+              stage: dev
         tags: {}
         failureStrategies:
           - onFailure:
@@ -138,16 +131,6 @@ pipeline:
         type: Deployment
         spec:
           deploymentType: NativeHelm
-          service:
-            serviceRef: httphelm
-            serviceInputs:
-              serviceDefinition:
-                type: NativeHelm
-                spec:
-                  artifacts:
-                    primary:
-                      primaryArtifactRef: <+input>
-                      sources: <+input>
           environment:
             environmentRef: prodenv
             deployToAll: false
@@ -169,6 +152,9 @@ pipeline:
                   type: HelmRollback
                   timeout: 10m
                   spec: {}
+          service:
+            useFromStage:
+              stage: dev
         tags: {}
         failureStrategies:
           - onFailure:
